@@ -13,6 +13,7 @@ body {
     --cornflower: #E7E9FC;
     --shadow: #2E2F4229;
     --light-slate: #8E8F99;
+    --green: #31D0AA;
     --card-set-gap: 24px;
 }
 
@@ -126,9 +127,11 @@ img {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 1440px;
+    background-size: cover;
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
+    margin: 0 auto 0 auto;
 }
 
 .hero-section-title {
@@ -190,11 +193,10 @@ img {
 .advantages-icon-box {
     background-color: var(--cloud);
     border-radius: 4px;
-    padding-top: 24px;
-    padding-bottom: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 112px;
 }
 
 .advantages-icon {
@@ -228,7 +230,6 @@ img {
 }
 
 .title {
-    display: block;
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
@@ -324,6 +325,10 @@ img {
     color: var(--cloud);
 }
 
+.social-link:is(:hover, :focus) {
+    background-color: var(--ocean)
+}
+
 .team-social-icon {
     fill: currentColor;
 }
@@ -337,13 +342,8 @@ img {
 }
 
 .customers-item {
-    display: block;
     width: 168px;
-    height: 88px;
-    padding: 16px 32px;
-    box-sizing: border-box;
-    border: 1px solid var(--light-slate);
-    border-radius: 4px;
+    min-height: 88px;
 }
 
 .customers-item:nth-child(n + 2) {
@@ -357,6 +357,18 @@ img {
     height: 100%;
     justify-content: center;
     align-items: center;
+    border: 1px solid var(--light-slate);
+    border-radius: 4px;
+    color: var(--light-slate);
+}
+
+.customers-link:is(:hover, :focus) {
+    color: var(--ocean);
+    border: 1px solid var(--ocean);
+}
+
+.customers-icon {
+    fill: currentColor;
 }
 
 .portfolio-btn-list {
@@ -405,7 +417,11 @@ img {
     padding-bottom: 0;
 }
 
-.portfolio-item:is(:hover, :focus) {
+.portfolio-item-link {
+    display: block;
+}
+
+.portfolio-item-link:is(:hover, :focus) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -446,7 +462,7 @@ img {
 
 .footer-section {
     display: flex;
-    justify-content: flex-start;
+    align-items: baseline;
 }
 
 .footer-studio {
@@ -467,7 +483,6 @@ img {
 }
 
 .footer-social-title {
-        font-family: 'Roboto', sans-serif;
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
@@ -498,6 +513,11 @@ img {
     height: 100%;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    color: var(--cloud);
+}
+
+.footer-social-link:is(:hover, :focus) {
+    background-color: var(--green);
     color: var(--cloud);
 }
 
